@@ -1,20 +1,16 @@
-public class DebitCard {
-    private String cardNumber;
+import com.sun.xml.internal.bind.v2.TODO;
+
+public class DebitCard extends BankCard implements IScan {
     private int sortCode;
     private int accountNumber;
-    private String expiryDate;
-    private int securityNumber;
+    private double balance;
 
     public DebitCard(String cardNumber, int sortCode, int accountNumber, String expiryDate, int securityNumber) {
-        this.cardNumber = cardNumber;
+        super(cardNumber, expiryDate,securityNumber);
         this.sortCode = sortCode;
         this.accountNumber = accountNumber;
-        this.expiryDate = expiryDate;
-        this.securityNumber = securityNumber;
-    }
+        this.balance = 0;
 
-    public String getCardNumber() {
-        return this.cardNumber;
     }
 
     public int getSortCode() {
@@ -25,15 +21,14 @@ public class DebitCard {
         return this.accountNumber;
     }
 
-    public String getExpiryDate() {
-        return this.expiryDate;
-    }
-
-    public int getSecurityNumber() {
-        return this.securityNumber;
+    public double getBalance() {
+        return balance;
     }
 
     public String scan() {
         return "Payment Complete";
     }
+
+    public void addFunds();
+    TODO
 }

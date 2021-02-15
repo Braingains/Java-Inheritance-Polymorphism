@@ -40,5 +40,11 @@ public class DebitCardTest {
         assertEquals("Payment Complete", debitCard.scan());
     }
 
+    @Test
+    public void hasBalance() {
+        debitCard.addFunds(300);
+        assertEquals(300, debitCard.checkBalance());
+    }
+
 
 }
